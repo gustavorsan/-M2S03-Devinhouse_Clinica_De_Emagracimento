@@ -1,12 +1,15 @@
 package model;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Clinica {
     private String nomeDono;
     private String clinica;
     private Endereco endereco;
     private int codigo = 0;
+
+    private ArrayList<Cliente> clientes;
 
 
 
@@ -16,6 +19,7 @@ public class Clinica {
         this.endereco = new Endereco(logradouro,numero);
         this.codigo++;
 
+        clientes = new ArrayList<Cliente>();
     }
 
     public String calculaImc(double peso,double altura){
@@ -38,6 +42,8 @@ public class Clinica {
 
         return "IMC: "+df.format(imc)+" Categoria: "+categoria;
     }
+
+
 
     @Override
     public String toString() {
