@@ -43,7 +43,18 @@ public class Clinica {
         return "IMC: "+df.format(imc)+" Categoria: "+categoria;
     }
 
+    public void novoCliente(String nome,double peso,double altura){
+        Cliente cliente = new Cliente( nome, this.calculaImc(peso,altura) );
 
+        this.clientes.add(cliente);
+    }
+
+    public void listaClientes(){
+        for (Cliente cliente : this.clientes){
+            System.out.println(cliente.toString());
+        }
+
+    }
 
     @Override
     public String toString() {
