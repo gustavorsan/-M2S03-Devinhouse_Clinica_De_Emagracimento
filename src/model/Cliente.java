@@ -8,4 +8,12 @@ public class Cliente {
         this.nome = nome;
         this.dados = dados;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", dados='" + dados + '\'' +
+                '}';
+    }
 }
