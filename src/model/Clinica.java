@@ -22,7 +22,16 @@ public class Clinica {
         clientes = new ArrayList<Cliente>();
     }
 
-    public String calculaImc(double peso,double altura){
+    public Clinica(String nomeDono) {
+        this.nomeDono = nomeDono;
+    }
+
+    public Clinica(String nomeDono, ArrayList<Cliente> clientes) {
+        this.nomeDono = nomeDono;
+        this.clientes = clientes;
+    }
+
+    public String calculaImc(double peso, double altura){
         double imc = peso / Math.pow(altura,2);
         String categoria = "Abaixo do peso normal";
         DecimalFormat df = new DecimalFormat("#.000");
