@@ -52,8 +52,8 @@ public class Clinica {
         return "IMC: "+df.format(imc)+" Categoria: "+categoria;
     }
 
-    public void novoCliente(String nome,double peso,double altura){
-        Cliente cliente = new Cliente( nome, this.calculaImc(peso,altura) );
+    public void novoCliente(String nome,double peso,double altura,int idade){
+        Cliente cliente = new Cliente( nome, this.calculaImc(peso,altura) ,idade,altura,peso);
 
         this.clientes.add(cliente);
     }
@@ -63,6 +63,16 @@ public class Clinica {
             System.out.println(cliente.toString());
         }
 
+    }
+
+    public void tratamento(int id){
+        for (Cliente cliente : this.clientes){
+            if(cliente.getId() == id){
+                cliente.alterPeso();
+                return;
+            }
+        }
+        System.out.println("Cliente nao Localizado");
     }
 
     @Override
