@@ -39,6 +39,10 @@ public class Cliente {
         this.peso -= 5;
     }
 
+    public void alterPeso(double valor){
+        this.peso -= valor;
+    }
+
 
     @Override
     public String toString() {

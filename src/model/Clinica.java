@@ -75,6 +75,16 @@ public class Clinica {
         System.out.println("Cliente nao Localizado");
     }
 
+    public void tratamento(int id,double valor){
+        for (Cliente cliente : this.clientes){
+            if(cliente.getId() == id){
+                cliente.alterPeso(valor);
+                return;
+            }
+        }
+        System.out.println("Cliente nao Localizado");
+    }
+
     @Override
     public String toString() {
         return "Clinica{" +

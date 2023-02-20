@@ -14,6 +14,11 @@ public class Main {
 
         clinica.tratamento(3);
 
+        clinica.tratamento(4,20);
+
+        clinica.tratamento(5,20);
+
+
         clinica.listaClientes();
 
     }
